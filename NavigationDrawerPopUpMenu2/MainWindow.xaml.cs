@@ -24,7 +24,7 @@ namespace NavigationDrawerPopUpMenu2
         {
             InitializeComponent();
         }
-        
+
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCloseMenu.Visibility = Visibility.Visible;
@@ -48,13 +48,25 @@ namespace NavigationDrawerPopUpMenu2
                     usc = new UserControlHome();
                     GridMain.Children.Add(usc);
                     break;
+
                 case "ItemCreate":
                     usc = new UserControlCreate();
                     GridMain.Children.Add(usc);
                     break;
+
                 default:
                     break;
             }
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Exist_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
